@@ -22,7 +22,7 @@
             "containers":[
                {
                   "name":"blue",
-                  "image":"syedzaingilani/zain_capstone",
+                  "image":"syedzaingilani/zaincapstone",
                   "ports":[
                      {
                         "name":"http-server",
