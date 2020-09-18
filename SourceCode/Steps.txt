@@ -1,0 +1,32 @@
+Steps to replicate the project:
+
+1. Set up AWS account.
+
+2. Go to EC2 -> Launch new Instance -> and connect to it by using putty.
+
+3. Clone my repo:
+
+   i. First set up ssh keys
+   > ssh-keygen -t rsa
+
+   Use  > cat path_to_pub_printed
+
+   ii. Open github, create new repo and go to settings -> SSH keys and add the contents on the above file.
+
+4. Download the following by looking up their installation tutorial:
+
+    Jenkins
+    Blue Ocean Plugin in Jenkins
+    Pipeline-AWS Plugin in Jenkins
+    Docker
+    Pip
+    AWS Cli
+    Eksctl
+    Kubectl
+
+5. Setup credentials for Docker and AWS on Jenkins, connect with your repo (with all the above files).
+
+6. Now follow the rest of the screenshots and use jenkins to create and deploy the entire project!
+
+you are all set and done now!
+

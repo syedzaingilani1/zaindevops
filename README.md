@@ -1,4 +1,4 @@
-# UDACITY CLOUD DEVOPS CAPSTONE PROJECT
+# UDACITY CLOUD DEVOPS CAPSTONE PROJECT(zainstudios)
 
 > Final project to graduate from the Cloud Devops Engineer Nanodegree!
 
@@ -26,8 +26,9 @@
 
 ### LEARNING
  
-I ran into a little too many errors during this project, not the most fun but I definitely learnt a lot! I tried making a project with Rolling deployment before this one [Repo](https://github.com/adinalini/DevopsCapstoneProject-2), but couldn't resolve the errors there, so finally tried out the Blue/Green and it worked! Can't wait to try out my skills in a real world project.
+I have worked really hard to complete all the task of this project and love the jenkins part the most.
 
-## HOW TO REPLICATE THIS PROJECT
+## GITHUB LINK
+https://github.com/syedzaingilani1/zaindevops
 
-Go to [Sourcecode](https://github.com/adinalini/DevopsCapstoneProject/tree/master/SourceCode) folder, there you will find the instructions and screenshots for all stages.
+
