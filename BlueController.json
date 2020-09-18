@@ -22,7 +22,7 @@
             "containers":[
                {
                   "name":"blue",
-                  "image":"adinalini/microservice_capstone",
+                  "image":"syedzaingilani/zain_capstone",
                   "ports":[
                      {
                         "name":"http-server",
