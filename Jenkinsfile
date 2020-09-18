@@ -25,7 +25,7 @@ pipeline{
                 steps{
                     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						docker build --tag=microservice_capstone .
+						docker build --tag=zaincapstone .
 						docker image ls
 					'''
 				    }
@@ -38,8 +38,8 @@ pipeline{
                     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-						docker tag microservice_capstone adinalini/microservice_capstone
-						docker push adinalini/microservice_capstone
+						docker tag zaincapstone syedzaingilani/zaincapstone
+						docker push syedzaingilani/zaincapstone
 					'''
 				    }
                 }
@@ -48,9 +48,9 @@ pipeline{
             // Stage 5 is setting up Kubernetes Cluster
             stage('Set current kubectl context') {
 				steps {
-					withAWS(region:'us-west-2', credentials:'aws_credentials') {
+					withAWS(region:'us-east-1', credentials:'aws_credentials') {
 						sh '''
-							kubectl config use-context arn:aws:eks:us-west-2:297605572640:cluster/microservicesCluster
+							kubectl config use-context arn:aws:eks:us-east-1:297605572640:cluster/microservicesCluster
 						'''
 					}
 				}
@@ -59,7 +59,7 @@ pipeline{
 			// Stage 6 is deploying the Blue docker container
 			stage('Deploy blue container') {
 				steps {
-					withAWS(region:'us-west-2', credentials:'aws_credentials') {
+					withAWS(region:'us-east-1', credentials:'aws_credentials') {
 						sh '''
 							kubectl apply -f ./BlueController.json
 						'''
