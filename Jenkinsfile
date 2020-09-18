@@ -50,7 +50,7 @@ pipeline{
 				steps {
 					withAWS(region:'us-east-1', credentials:'aws_credentials') {
 						sh '''
-							kubectl config use-context arn:aws:eks:us-east-1:297605572640:cluster/microservicesCluster
+							kubectl config use-context arn:aws:eks:us-east-1:110342860649:cluster/microservicesCluster
 						'''
 					}
 				}
@@ -70,7 +70,7 @@ pipeline{
 			// Stage 7 is deploying the Green docker container
 			stage('Deploy green container') {
 				steps {
-					withAWS(region:'us-west-2', credentials:'aws_credentials') {
+					withAWS(region:'us-east-1', credentials:'aws_credentials') {
 						sh '''
 							kubectl apply -f ./GreenController.json
 						'''
@@ -81,7 +81,7 @@ pipeline{
 			// Stage 8 is creating the Kubernetes Service and redirect to Blue Service
 			stage('Create the service in the cluster, redirect to blue') {
 				steps {
-					withAWS(region:'us-west-2', credentials:'aws_credentials') {
+					withAWS(region:'us-east-1', credentials:'aws_credentials') {
 						sh '''
 							kubectl apply -f ./BlueService.json
 						'''
@@ -99,7 +99,7 @@ pipeline{
 			// Stage 10 is create the Kubernetes Service and redirect to Green Service
 			stage('Create the service in the cluster, redirect to green') {
 				steps {
-					withAWS(region:'us-west-2', credentials:'aws_credentials') {
+					withAWS(region:'us-east-1', credentials:'aws_credentials') {
 						sh '''
 							kubectl apply -f ./GreenService.json
 						'''
